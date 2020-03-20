@@ -13,6 +13,7 @@ instance.interceptors.request.use(config => {
 	if (token != null && token != '' && typeof token != 'undefined') {
 		config.headers['H-User-Token'] = token;
 	}
+  // config.headers['Content-Security-Policy'] = 'upgrade-insecure-requests';
 	return config;
 }, error => { });
 
