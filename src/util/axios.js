@@ -3,8 +3,8 @@ import router from '.././router'
 import Vue from 'vue'
 const v = new Vue({});
 var instance = axios.create();
-	var REQ_URL= 'http://222.217.61.68:8888/pms/api/v1';
-	var REQ_URL= 'http://222.217.61.68:8888/pms-admin/api/v1';
+	var REQ_URL= '//222.217.61.68:8888/pms/api/v1';
+	var REQ_URL= '//222.217.61.68:8888/pms-admin/api/v1';
 
 
 /***axios请求拦截**/
@@ -13,7 +13,6 @@ instance.interceptors.request.use(config => {
 	if (token != null && token != '' && typeof token != 'undefined') {
 		config.headers['H-User-Token'] = token;
 	}
-  config.headers['Content-Security-Policy'] = 'upgrade-insecure-requests';
 	return config;
 }, error => { });
 
